@@ -28,6 +28,25 @@ To monitor a peer server you have to set the `datomic.metricsCallback` Java syst
 bin/run -m datomic.peer-server -Ddatomic.metricsCallback=io.github.galuque.datomic.jmx.metrics/callback ...
 ``` 
 
+In both cases you need the `datomic-jmx-metrics` library in the classpath of the transactor or peer server.
+
+You can download the latest release JAR and add it to the `lib` directory of your Datomic installation.
+
+```bash
+curl -LJO https://github.com/galuque/datomic-jmx-metrics/releases/download/v0.1.5/datomic-jmx-metrics-0
+.1.5.jar && mv datomic-jmx-metrics-0.1.5.jar /path/to/datomic/lib
+```
+
+Finally you need to expose the JMX port of the transactor or peer server to be able to connect to it with a JMX client.
+
+You can do that with the following Java system properties:
+
+```bash
+bin/transactor ... -Dcom.sun.management.jmxremote.port=9004 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false ...
+```
+
+(This is not recommended for production environments, see [JMX Monitoring and Management](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html) for more information)
+
 ## Development
 
 Run the project's tests:
