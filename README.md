@@ -47,6 +47,10 @@ bin/transactor ... -Dcom.sun.management.jmxremote.port=9004 -Dcom.sun.management
 
 (This is not recommended for production environments, see [JMX Monitoring and Management](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html) for more information)
 
+### Example project
+
+In the "monitoring" branch of the [datomic-compose](https://github.com/galuque/datomic-compose/tree/monitoring) project you can find an example of how to use this library to monitor a Datomic system using prometheus and grafana.
+
 ## Development
 
 Run the project's tests:
