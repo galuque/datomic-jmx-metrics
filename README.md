@@ -6,7 +6,7 @@ It uses the [custom monitoring](https://docs.datomic.com/pro/operation/monitorin
 
 With the metrics exposed via JMX, you can use tools like [JConsole](https://docs.oracle.com/javase/8/docs/technotes/guides/management/jconsole.html) or [VisualVM](https://visualvm.github.io/) to monitor your Datomic system in development.
 
-And in production you can use tools like [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/) to monitor your Datomic system using [JMX expoerter](https://github.com/prometheus/jmx_exporter)
+And in production you can use tools like [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/) to monitor your Datomic system using [JMX exporter](https://github.com/prometheus/jmx_exporter)
 
 ## Usage
 
