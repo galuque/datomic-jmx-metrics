@@ -34,8 +34,10 @@ You can download the latest release JAR and add it to the `lib` directory of you
 
 ```bash
 curl -LJO https://github.com/galuque/datomic-jmx-metrics/releases/download/v0.1.5/datomic-jmx-metrics-0
-.1.5.jar && mv datomic-jmx-metrics-0.1.5.jar /path/to/datomic/lib
+.1.11.jar && mv datomic-jmx-metrics-0.1.11.jar /path/to/datomic/lib
 ```
+
+(This is a "thin" jar, it doesn't include any dependencies, the only dependency is "org.clojure/java.jmx" which is already included in Datomic)
 
 Finally you need to expose the JMX port of the transactor or peer server to be able to connect to it with a JMX client.
 
