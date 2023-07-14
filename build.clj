@@ -1,7 +1,6 @@
 (ns build
   (:refer-clojure :exclude [test])
-  (:require [clojure.tools.build.api :as b]
-            [deps-deploy.deps-deploy :as dd]))
+  (:require [clojure.tools.build.api :as b]))
 
 (def lib 'io.github.galuque/datomic-jmx-metrics)
 (def version (format "0.1.%s" (b/git-count-revs nil)))
@@ -37,15 +36,4 @@
     (b/copy-dir {:src-dirs ["resources" "src"] :target-dir class-dir})
     (println "\nBuilding JAR...")
     (b/jar opts))
-  opts)
-
-(defn install "Install the JAR locally." [opts]
-  (let [opts (jar-opts opts)]
-    (b/install opts))
-  opts)
-
-(defn deploy "Deploy the JAR to Clojars." [opts]
-  (let [{:keys [jar-file] :as opts} (jar-opts opts)]
-    (dd/deploy {:installer :remote :artifact (b/resolve-path jar-file)
-                :pom-file (b/pom-path (select-keys opts [:lib :class-dir]))}))
   opts)
