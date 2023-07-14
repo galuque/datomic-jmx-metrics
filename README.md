@@ -65,15 +65,6 @@ This will produce an updated `pom.xml` file with synchronized dependencies insid
 directory inside `target/classes` and the JAR in `target`. You can update the version (and SCM tag)
 information in generated `pom.xml` by updating `build.clj`.
 
-Install it locally (requires the `ci` task be run first):
-
-    $ clojure -T:build install
-
-Deploy it to Clojars -- needs `CLOJARS_USERNAME` and `CLOJARS_PASSWORD` environment
-variables (requires the `ci` task be run first):
-
-    $ clojure -T:build deploy
-
 ## License
 
 Copyright © 2023 Gabriel Luque Di Donna
